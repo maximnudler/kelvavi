@@ -1,0 +1,629 @@
+﻿/*פונטים*/
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('../Rubik/static/Rubik-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rubik-Light';
+    src: url('../Rubik/static/Rubik-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('../Rubik/static/Rubik-Medium.ttf') format('truetype');
+}
+
+/*בסיסי*/
+body {
+    direction: rtl;
+    font-size: 16pt;
+    overflow-x: hidden; /*מגדיר את ההזזה מימין לשמאל כך שהעמוד יחתך*/
+    font-family: Rubik-Medium;
+}
+#container {
+    width: 1280px;
+    margin: 0 auto;
+}
+.notActive {
+    cursor: not-allowed;
+}
+.default { /*העכבר יופיע כברירת מחדל- לא לחיץ*/
+    cursor: default;
+}
+
+/*תפריט ניווט לוגו בתוך התפריט*/
+#homeLogo {
+    width: 135px;
+    margin-top: -16px;
+}
+#headerNav {
+    position: fixed; /*נשאר באותו מקום גם אם הדף גולל.*/
+    width: 1280px;
+    top: 0px;
+    z-index: 5;
+}
+nav ul { /*העלמת תבליטים*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li a { /*תפריט אופקי*/
+    display: inline-block;
+    float: right;
+}
+#headerNav ul li a { /*העיצוב עצמו*/
+    display: block;
+    color: black;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    padding-top: 22px;
+    font-size: 16pt;
+    font-family: Rubik-Light;
+    background-color: white;
+}
+#headerNav ul li .secondNavStains { /*התפריט שנפתח מהלייף סטייל*/
+    text-align: center;
+    padding: 10px 40px;
+    width: 170px;  /*לסדר את המרווחים מלמעלה למטה בתוך הריבועים*/
+}
+#headerNav ul li a:hover { /*מעבר עכבר משנה צבע לכתב*/
+    position: relative; /*מיקום יחסי*/
+    color: #a66832;
+    font-family: Rubik-Medium;
+}
+/*/עיצוב רשימה/*/
+ul li {
+    list-style: none;
+    font-weight: normal;
+}
+/*שלא יהיה קו מתחת לטקסט בתפריט ניווט*/
+a {
+    text-decoration: none;
+}
+
+/*הגדרות של תת תפריט*/
+#headerNav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: rgba(242, 242, 242, 0.3);
+}
+/*הגדרות של מעבר עכבר*/
+#headerNav ul li:hover ul {
+    display: block;
+    right: 175px;
+    height: -20px;
+    top: 62px;
+    box-shadow: 0px 16px 13px -1px rgba(0,0,0,0.12);
+}
+#responsive {
+    position: relative;
+}
+
+/*כפתור נגישות*/
+#accButton .redSquareFull {
+    position: fixed;
+    top: 70px;
+    left: -5px;
+    width: 145px;
+    height: 55px;
+    z-index: 6;
+}
+#accButton a {
+    position: fixed;
+    top: 75px;
+    left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 120%;
+    text-align: center;
+    z-index: 7;
+    text-decoration: none;
+}
+    #accButton a:visited {
+        text-decoration: none;
+    }
+/*נגישות סקיפ*/
+#skip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    list-style: outside none;
+}
+#skip li {
+    list-style-type: none
+}
+#skip a {
+    position: absolute;
+    top: 30px;
+}
+    #skip a:focus, #skip a:active {
+        position: relative;
+        left: 0;
+        top: 50px;
+        z-index: 9999;
+        width: 75%;
+        height: auto;
+        margin: 0 auto;
+        padding: 30px 45px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        color: #ff5a44;
+        border: 1px dotted #272727;
+        background-color: white;
+    }
+
+.front {
+    z-index: 4;
+}
+
+/*כותרות*/
+.homepage {
+    font-size: 30pt;
+    text-align: center;
+    line-height: 100%; /*מרווח בין השורות*/
+    font-weight: normal;
+    font-family: Rubik-Bold;
+    color: #a66832;
+    margin-top: -300px;
+}
+#FrontName {
+    font-size: 45pt;
+}
+.homepage2 {
+    font-size: 18pt;
+    text-align: center;
+    font-weight: normal;
+    padding-top: 5px;
+    line-height: 130%;
+    font-family: Rubik-Medium;
+    color: #403501;
+}
+h1
+{
+    font-size: 30pt;
+    text-align: right;
+    font-weight: normal;
+    font-family: Rubik-Bold;
+    color: #a66832;
+    margin-top: 250px;
+    margin-right: 37px;
+}
+h2 {
+    font-size: 18pt;
+    line-height: 20%;
+    text-align: right;
+    font-weight: normal;
+    font-family: Rubik-Medium;
+    color: #403501;
+    margin-right: 37px;
+}
+/*גיף ראשי*/
+#pawsGif {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 80px;
+    transform: rotate(180deg); /*היפוך הגיף*/
+}
+
+/*תמונות וגיפים חווית גלילה*/
+#food {
+    width: 228px;
+    position: absolute;
+    right: 287px;
+    top: 30px;
+    display: inline-block;
+    opacity: 100;
+}
+#foodbawl {
+    width: 120px;
+    position: absolute;
+    right: 287px;
+    top: 80px;
+    display: inline-block;
+    opacity: 100;
+}
+
+/*הגדרות עיצוב פוטר*/
+footer {
+    margin-top: 700px;
+    background-color: #f2c849;
+    height: 150px;
+    background-color: #f2c849;
+    border-bottom: 30px solid;
+    border-bottom-color: rgb(41,47,51);
+    z-index: 5;
+    width: 1280px;
+}
+#haircutfooter {
+    margin-top: 550px;
+}
+table{
+    padding-top: 20px;
+    text-align:right;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12pt;
+    font-family: Rubik-Light;
+    width: 80%;
+    color: black;
+}
+.title, .bold {
+
+    font-family: Rubik-Medium;
+    font-weight: bold;
+}
+.title {
+    cursor: default;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/*עיצוב תפריט פירורי לחם*/
+#breadCrumbs {
+    position: absolute;
+    top: 150px;
+}
+    #breadCrumbs ol li {
+        display: inline-block;
+        font-size: 12pt;
+        font-family: Rubik-Light;
+    }
+        #breadCrumbs ol li a {
+            color: #272727;
+        }
+        #breadCrumbs ol li:after {
+            content: ">";
+        }
+        #breadCrumbs ol li:last-child:after {
+            content: "";
+        }
+        #breadCrumbs ol li:last-child {
+            color: #a66832;
+            font-family: Rubik-Medium;
+        }
+
+#haircutBack  {
+    position:absolute;
+    z-index: -1;
+    width: 1280px;
+    height: 850px;
+}
+#meshiBack {
+    position: absolute;
+    margin-top: -15px;
+    z-index: -1;
+    width: 1280px;
+    height: 920px;
+}
+/*כפתורים עמוד פנימי שיער*/
+#HairButton {
+    width: 1000px;
+    margin: 0 auto;
+    z-index: 3;
+}
+.button1 {
+    background-color: #f2D06b;
+    border: solid;
+    border-color: #F2C849;
+    border-radius: 25px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Rubik-Medium;
+    cursor: pointer;
+    width: 160px;
+    height: 50px;
+    box-shadow: 0px 4px 8px rgba(166, 104, 50, 0.7);
+}
+.button2 {
+    border: solid;
+    border-radius: 25px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Rubik-Medium;
+    width: 160px;
+    height: 50px;
+    background-color: #8fd9d1;
+    border-color: #79bed9;
+    box-shadow: 0px 4px 8px rgba(121, 190, 217, 0.7);
+}
+/*מעבר עכבר על הכפתור*/
+    .button1:hover{
+        background-color: #8fd9d1;
+        border-color: #79bed9;
+        box-shadow: 0px 4px 8px rgba(121, 190, 217, 0.7);
+    }
+.button3 {
+    background-color: #f2D06b;
+    border: solid;
+    border-color: #F2C849;
+    border-radius: 25px;
+    color: black;
+    padding: 0px 32px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    font-family: Rubik-Medium;
+    cursor: pointer;
+    width: 285px;
+    height: 40px;
+    box-shadow: 0px 4px 8px rgba(166, 104, 50, 0.7);
+    margin-top: 10px;
+    margin-right: -105px;
+}
+/*מעבר עכבר על הכפתור*/
+.button3:hover {
+    background-color: #8fd9d1;
+    border-color: #79bed9;
+    box-shadow: 0px 4px 8px rgba(121, 190, 217, 0.7);
+}
+#backtick {
+    position: absolute;
+    margin-top: -20px;
+    z-index: -1;
+    width: 1280px;
+    height: 920px;
+}
+
+
+    /*/כתב/
+
+
+
+
+
+    a:hover span {
+        color: #ff5a44;
+    }
+
+/פרטי לבוש/
+#stainRemoval a img {
+    /הגדרות לתמונה/ display: inline-block;
+    width: 230px;
+    position: absolute;
+    right: 280px;
+    top: 60px;
+}
+
+#stainRemoval a p {
+    /הגדרות לטקסט/ position: absolute;
+    right: 530px;
+    top: 155px;
+    line-height: 150%;
+}
+
+/מעבר עכבר פרטי לבוש/
+/במעבר עכבר להעלים את תמונה 1/
+#stainRemoval a:hover #ShirtIcon1 {
+    display: none;
+}
+
+#ShirtIcon2 {
+    opacity: 0;
+}
+
+/במעבר עכבר להראות את תמונה 2/
+#stainRemoval a:hover #ShirtIcon2 {
+    width: 228px;
+    position: absolute;
+    right: 287px;
+    top: 65px;
+    display: inline-block;
+    opacity: 100;
+}
+
+#stainRemoval a:hover #line1 {
+    display: none;
+}
+
+#line1 {
+    opacity: 0;
+}
+
+#stainRemoval a:hover #line1 {
+    width: 183px;
+    position: absolute;
+    right: 530px;
+    top: 225px;
+    display: inline-block;
+    opacity: 100;
+}
+
+#laundry a img {
+    display: inline-block;
+    width: 230px;
+    position: absolute;
+    left: 320px;
+    top: 305px;
+}
+
+#laundry a p {
+    position: absolute;
+    left: 610px;
+    top: 395px;
+    line-height: 150%;
+}
+
+/מעבר עכבר כביסה לבנה/
+/במעבר עכבר להעלים את תמונה 1/
+#laundry a:hover #laundryIcon1 {
+    display: none;
+}
+
+#laundryIcon2 {
+    opacity: 0;
+}
+
+/במעבר עכבר להראות את תמונה 2/
+#laundry a:hover #laundryIcon2 {
+    width: 208px;
+    position: absolute;
+    left: 345px;
+    top: 303px;
+    display: inline-block;
+    opacity: 100;
+}
+
+/מעבר עכבר קן- איך מנקים/
+#laundry a:hover #line2 {
+    display: none;
+}
+
+#line2 {
+    opacity: 0;
+}
+
+#laundry a:hover #line2 {
+    width: 183px;
+    position: absolute;
+    right: 360px;
+    top: 462px;
+    display: inline-block;
+    opacity: 100;
+}
+
+
+
+#pot a img {
+    display: inline-block;
+    width: 270px;
+    position: absolute;
+    right: 260px;
+    top: 520px;
+}
+
+#pot a p {
+    position: absolute;
+    right: 530px;
+    top: 660px;
+    line-height: 150%;
+}
+
+
+/מעבר עכבר אקססוריז/
+/במעבר עכבר להעלים את תמונה 1/
+#pot a:hover #pot1 {
+    display: none;
+}
+
+#pot2 {
+    opacity: 0;
+}
+
+/במעבר עכבר להראות את תמונה 2/
+#pot a:hover #pot2 {
+    width: 250px;
+    position: absolute;
+    right: 265px;
+    top: 535px;
+    display: inline-block;
+    opacity: 100;
+}
+
+/מעבר עכבר- קו איך מסירים/
+#pot a:hover #line3 {
+    display: none;
+}
+
+#line3 {
+    opacity: 0;
+}
+
+#pot a:hover #line3 {
+    width: 183px;
+    position: absolute;
+    right: 530px;
+    top: 728px;
+    display: inline-block;
+    opacity: 100;
+}*/
+
+
+
+
+
+
+/*  ירין נסיון 
+*/
+
+
+/*אודות נסיון 
+*/
+.photo {
+    width: 150px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+
+.squarePhoto {
+    position: relative;
+    max-width: 170px;
+    margin: 0 auto;
+    display: inline-block;
+    margin-right: 13px;
+    margin-top: 60px;
+}
+
+    .squarePhoto span {
+        position: absolute;
+        bottom: 5px;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 130px;
+        padding: 10px;
+        margin-right: 21px;
+        text-align: center;
+    }
+
+
+/*קישור ללוגו הפקולטה*/
+section a img {
+    width: 50px;
+}
+
+
+#HIT {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*דף צור קשר 
+*/
+#sent {
+    position: absolute;
+    top: 570px;
+    right: 335px;
+}
+
+
+
+
+
+#right {
+    position: absolute;
+    top: 80px;
+    right: 100px;
+}
+
+#left {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+}
